@@ -303,14 +303,14 @@ class ReportAerooAbstract(models.AbstractModel):
 
     def _format_lang(
             self, value, digits=None, grouping=True, monetary=False, dp=False,
-            currency_obj=False, date=False, date_time=False):
+            currency_obj=False, date=False, date_time=False, lang_code=False, date_format=False):
         """ We add date and date_time for backwards compatibility. Odoo has
         split the method in two (formatlang and format_date)
         """
         if date:
-            return odoo_fd(self.env, value)
+            return odoo_fd(self.env, value, lang_code=lang_code, date_format=date_format)
         elif date_time:
-            return format_datetime(self.env, value)
+            return format_datetime(self.env, value, lang_code=lang_code, date_format=date_format)
         return odoo_fl(
             self.env, value, digits, grouping, monetary, dp, currency_obj)
 
