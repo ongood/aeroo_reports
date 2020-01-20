@@ -18,6 +18,7 @@ _url = 'xhttp://www.alistek.com/aeroo_banner/v11_1_report_aeroo.png'
 
 class DocsConfigInstaller(models.TransientModel):
     _name = 'docs_config.installer'
+    _description = 'docs_config.installer'
     _inherit = 'res.config.installer'
     _rec_name = 'host'
     _logo_image = None
@@ -44,7 +45,6 @@ class DocsConfigInstaller(models.TransientModel):
             self._logo_image = b64encode(im.read())
             return self._logo_image
     
-    @api.one
     def _get_image_fn(recs):
         recs.config_logo = recs._get_image()
     
@@ -81,7 +81,6 @@ class DocsConfigInstaller(models.TransientModel):
         defaults['password'] = icp.get_param('aeroo.docs_password') or 'anonymous'
         return defaults
     
-    @api.multi
     def check(self):
         icp = self.env['ir.config_parameter'].sudo()
         icp.set_param('aeroo.docs_enabled', str(self.enabled))

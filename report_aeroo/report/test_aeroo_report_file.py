@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
 
 from odoo import api, models
 
 
 class TestAerooReport(models.AbstractModel):
     _inherit = 'report.report_aeroo.abstract'
-    
     _name = 'report.product_template_printer'
-    
+    _description = 'report.product_template_printer'
 
 #===============================================================================
     @api.model
