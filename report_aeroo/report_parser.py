@@ -477,6 +477,7 @@ class ReportAerooAbstract(models.AbstractModel):
     def assemble_tasks(self, docids, data, report, ctx):
         code = report.out_format.code
         result = self.single_report(docids, data, report, ctx)
+        return_filename = self._context.get('return_filename')
 
         print_report_name = 'report'
         if report.print_report_name and not len(docids) > 1:
@@ -487,14 +488,14 @@ class ReportAerooAbstract(models.AbstractModel):
         if report.in_format == code:
             filename = '%s.%s' % (
                 print_report_name, mime_dict[report.in_format])
-            return result[0], result[1], filename
+            return return_filename and (result[0], result[1], filename) or (result[0], result[1])
         else:
             try:
                 self.get_docs_conn()
                 result = self._generate_doc(result[0], report)
                 filename = '%s.%s' % (
                     print_report_name, mime_dict[report.out_format.code])
-                return result, mime_dict[code], filename
+                return return_filename and (result, mime_dict[code], filename) or (result, mime_dict[code])
             except Exception as e:
                 _logger.exception(_("Aeroo DOCS error!\n%s") % str(e))
                 if report.disable_fallback:
@@ -503,7 +504,7 @@ class ReportAerooAbstract(models.AbstractModel):
                     raise ConnectionError(_('Could not connect Aeroo DOCS!'))
         # only if fallback
         filename = '%s.%s' % (print_report_name, mime_dict[report.in_format])
-        return result[0], result[1], filename
+        return return_filename and (result[0], result[1], filename) or (result[0], result[1])
 
     @api.model
     def aeroo_report(self, docids, data):
@@ -540,7 +541,7 @@ class ReportAerooAbstract(models.AbstractModel):
             s = BytesIO()
             output.write(s)
             data = s.getvalue()
-            res = data, results[0][1], results[0][2]
+            res = self._context.get('return_filename') and (data, results[0][1], results[0][2]) or data, results[0][1]
         else:
             res = self.assemble_tasks(docids, data, report, self._context)
         # TODO

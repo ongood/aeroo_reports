@@ -54,6 +54,7 @@ class ReportController(main.ReportController):
         if context.get('print_with_sudo'):
             report = report.sudo()
         context['report_name'] = reportname
+        context['return_filename'] = True
         res, extension, filename = report.with_context(context).render_aeroo(
             docids, data=data)
         mimetype = self.MIMETYPES.get(res, 'application/octet-stream')

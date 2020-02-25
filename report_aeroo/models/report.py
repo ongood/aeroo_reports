@@ -64,7 +64,6 @@ class ReportMimetypes(models.Model):
 
 # ------------------------------------------------------------------------------
 class ReportAeroo(models.Model):
-    _name = 'ir.actions.report'
     _inherit = 'ir.actions.report'
 
     @api.model
