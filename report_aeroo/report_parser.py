@@ -92,6 +92,17 @@ class ReportAerooAbstract(models.AbstractModel):
         return _filter(val)
 
     # Extra Functions ==========================================================
+    def myset(self, pair):
+        if isinstance(pair, dict):
+            self.localcontext['storage'].update(pair)
+        return False
+
+    def myget(self, key):
+        if key in self.localcontext['storage'] and self.localcontext[
+                'storage'][key]:
+            return self.localcontext['storage'][key]
+        return False
+
     def _asarray(self, attr, field):
         """
         Returns named field from all objects as a list.
@@ -376,6 +387,9 @@ class ReportAerooAbstract(models.AbstractModel):
                 humanreadable=humanreadable)
             return self._asimage(base64.b64encode(img))
         self.localcontext = {
+            'myset': self.myset,
+            'myget': self.myget,
+            'storage': {},
             'user':     self.env.user,
             'user_lang': ctx.get('lang', False),
             'data':     data,
