@@ -103,6 +103,39 @@ class ReportAerooAbstract(models.AbstractModel):
             return self.localcontext['storage'][key]
         return False
 
+    def partner_address(self, partner):
+        # for backward compatibility
+        ret = ''
+        if partner.street:
+            ret += partner.street
+        if partner.street2:
+            if partner.street:
+                ret += ' - ' + partner.street2
+            else:
+                ret += partner.street2
+        if ret != '':
+            ret += '. '
+
+        if partner.zip:
+            ret += '(' + partner.zip + ')'
+        if partner.city:
+            if partner.zip:
+                ret += ' ' + partner.city
+            else:
+                ret += partner.city
+        if partner.state_id:
+            if partner.city:
+                ret += ' - ' + partner.state_id.name
+            else:
+                ret += partner.state_id.name
+        if partner.zip or partner.city or partner.state_id:
+            ret += '. '
+
+        if partner.country_id:
+            ret += partner.country_id.name + '.'
+
+        return ret
+
     def _asarray(self, attr, field):
         """
         Returns named field from all objects as a list.
@@ -389,6 +422,7 @@ class ReportAerooAbstract(models.AbstractModel):
         self.localcontext = {
             'myset': self.myset,
             'myget': self.myget,
+            'partner_address': self.partner_address,
             'storage': {},
             'user':     self.env.user,
             'user_lang': ctx.get('lang', False),
