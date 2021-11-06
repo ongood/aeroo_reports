@@ -1,4 +1,4 @@
 Aeroo Reports
 =============
 
-Aeroo Reports for Odoo v13
+Aeroo Reports for Odoo
