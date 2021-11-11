@@ -32,6 +32,6 @@
     'data': [
         'views/assets.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': True,
 }
