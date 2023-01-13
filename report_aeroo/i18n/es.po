@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-04 13:10+0000\n"
+"POT-Creation-Date: 2023-01-13 14:15+0000\n"
 "PO-Revision-Date: 2022-05-03 16:21+0000\n"
 "Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2022\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/133229/es/)\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer___logo_image
@@ -92,9 +92,14 @@ msgid "Aeroo Reports could'nt find report template"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_import_wizard.py:0
-#, python-format
-msgid "Aeroo report file is invalid!"
+#: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__algolia_search
+#: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__algolia_search
+#: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__algolia_search
+#: model:ir.model.fields,field_description:report_aeroo.field_report_product_template_printer__algolia_search
+#: model:ir.model.fields,field_description:report_aeroo.field_report_report_aeroo_abstract__algolia_search
+#: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets__algolia_search
+#: model:ir.model.fields,field_description:report_aeroo.field_res_company__algolia_search
+msgid "Algolia Search"
 msgstr ""
 
 #. module: report_aeroo
@@ -113,13 +118,6 @@ msgid "Charset"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/wizard/add_print_button.py:0
-#, python-format
-msgid "Client Events"
-msgstr ""
-
-#. module: report_aeroo
-#: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_print_by_action_view_form
 #: model_terms:ir.ui.view,arch_db:report_aeroo.view_docs_config_installer
 msgid "Close"
 msgstr "Cerrar"
@@ -127,7 +125,7 @@ msgstr "Cerrar"
 #. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__code
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #. module: report_aeroo
 #: model:ir.model,name:report_aeroo.model_res_company
@@ -152,7 +150,7 @@ msgid "Configure DOCS service connection"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/models/installer.py:0
+#: code:addons/report_aeroo/wizard/installer.py:0
 #, python-format
 msgid "Connection to Aeroo DOCS disabled!"
 msgstr ""
@@ -169,7 +167,6 @@ msgid "Could not connect Aeroo DOCS!"
 msgstr ""
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__create_uid
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__create_uid
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__create_uid
 #: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets__create_uid
@@ -177,7 +174,6 @@ msgid "Created by"
 msgstr "Creado por"
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__create_date
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__create_date
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__create_date
 #: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets__create_date
@@ -190,16 +186,9 @@ msgid "Database"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/models/report.py:0
-#: model:ir.model.fields.selection,name:report_aeroo.selection__ir_actions_report__parser_state__default
-#, python-format
-msgid "Default"
-msgstr ""
-
-#. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__deferred
 msgid "Deferred"
-msgstr ""
+msgstr "Diferido"
 
 #. module: report_aeroo
 #: model:ir.model.fields,help:report_aeroo.field_ir_actions_report__deferred
@@ -216,7 +205,7 @@ msgstr ""
 #. module: report_aeroo
 #: model_terms:ir.ui.view,arch_db:report_aeroo.view_docs_config_installer
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__disable_fallback
@@ -224,7 +213,6 @@ msgid "Disable Format Fallback"
 msgstr ""
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__display_name
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__display_name
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__display_name
 #: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets__display_name
@@ -252,19 +240,12 @@ msgid "Error Details"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_import_wizard.py:0
-#: code:addons/report_aeroo/wizard/report_import_wizard.py:0
-#, python-format
-msgid "Error!"
-msgstr ""
-
-#. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__extras
 msgid "Extra options"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/models/installer.py:0
+#: code:addons/report_aeroo/wizard/installer.py:0
 #, python-format
 msgid ""
 "Failure! Connection to DOCS service was not established or convertion to PDF"
@@ -304,7 +285,6 @@ msgid "Host"
 msgstr ""
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__id
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__id
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__id
 #: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets__id
@@ -329,19 +309,6 @@ msgid "Init"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_print_by_action.py:0
-#, python-format
-msgid "Input single record ID or number of comma separated IDs!"
-msgstr ""
-
-#. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_import_wizard.py:0
-#, python-format
-msgid "Is not Aeroo report file."
-msgstr ""
-
-#. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action____last_update
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer____last_update
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes____last_update
 #: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets____last_update
@@ -349,7 +316,6 @@ msgid "Last Modified on"
 msgstr "Última modificación el"
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__write_uid
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__write_uid
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__write_uid
 #: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets__write_uid
@@ -357,7 +323,6 @@ msgid "Last Updated by"
 msgstr "Última modificación por"
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__write_date
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__write_date
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__write_date
 #: model:ir.model.fields,field_description:report_aeroo.field_report_stylesheets__write_date
@@ -365,16 +330,9 @@ msgid "Last Updated on"
 msgstr "Última actualización el"
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/models/report.py:0
-#: model:ir.model.fields.selection,name:report_aeroo.selection__ir_actions_report__parser_state__loc
-#, python-format
-msgid "Location"
-msgstr ""
-
-#. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__msg
 msgid "Message"
-msgstr ""
+msgstr "Mensaje"
 
 #. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_report_mimetypes__name
@@ -399,16 +357,6 @@ msgid "Number of Copies"
 msgstr ""
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__object_ids
-msgid "Object IDs"
-msgstr ""
-
-#. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_aeroo_print_by_action__name
-msgid "Object Model"
-msgstr ""
-
-#. module: report_aeroo
 #: code:addons/report_aeroo/models/report.py:0
 #: model:ir.model.fields.selection,name:report_aeroo.selection__ir_actions_report__deferred__off
 #, python-format
@@ -426,6 +374,13 @@ msgid "OpenOffice.org / LibreOffice stylesheet (.odt)"
 msgstr ""
 
 #. module: report_aeroo
+#: model:ir.model.fields,help:report_aeroo.field_ir_actions_report__parser_model
+msgid ""
+"Optional model to be used as parser, if not configured "
+"\"report.report_aeroo.abstract\" will be used"
+msgstr ""
+
+#. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__out_format
 #: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_report_search_view
 msgid "Output Mime-type"
@@ -433,31 +388,24 @@ msgstr ""
 
 #. module: report_aeroo
 #: model:ir.model.fields.selection,name:report_aeroo.selection__ir_actions_report__tml_source__parser
-#: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_report_xml_view
 msgid "Parser"
 msgstr ""
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__parser_def
-msgid "Parser Definition"
+#: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__parser_model
+msgid "Parser Model"
 msgstr ""
 
 #. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__parser_loc
-msgid "Parser location"
+#: code:addons/report_aeroo/models/report.py:0
+#, python-format
+msgid "Parser model %s not found on database."
 msgstr ""
 
 #. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__password
 msgid "Password"
-msgstr ""
-
-#. module: report_aeroo
-#: model:ir.model.fields,help:report_aeroo.field_ir_actions_report__parser_loc
-msgid ""
-"Path to the parser location. Beginning of the path must be start               with the module name!\n"
-" Like this: {module name}/{path to the               parser.py file}"
-msgstr ""
+msgstr "Contraseña"
 
 #. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__port
@@ -474,12 +422,6 @@ msgstr ""
 #. module: report_aeroo
 #: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__preload_mode
 msgid "Preload Mode"
-msgstr ""
-
-#. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_print_by_action.py:0
-#, python-format
-msgid "Print Screen report does not support this functionality!"
 msgstr ""
 
 #. module: report_aeroo
@@ -544,12 +486,6 @@ msgid "Report Wizard"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_import_wizard.py:0
-#, python-format
-msgid "Report with service name \"%s\" already exist in system!"
-msgstr ""
-
-#. module: report_aeroo
 #: model:ir.model.fields,help:report_aeroo.field_ir_actions_report__replace_report_id
 msgid "Select a report that should be replaced."
 msgstr ""
@@ -557,11 +493,6 @@ msgstr ""
 #. module: report_aeroo
 #: model:ir.model.fields.selection,name:report_aeroo.selection__docs_config_installer__auth_type__simple
 msgid "Simple Authentication"
-msgstr ""
-
-#. module: report_aeroo
-#: model:ir.model.fields,help:report_aeroo.field_aeroo_print_by_action__object_ids
-msgid "Single ID or number of comma separated record IDs"
 msgstr ""
 
 #. module: report_aeroo
@@ -573,11 +504,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:report_aeroo.field_docs_config_installer__state
 msgid "State"
 msgstr "Estado"
-
-#. module: report_aeroo
-#: model:ir.model.fields,field_description:report_aeroo.field_ir_actions_report__parser_state
-msgid "State of Parser"
-msgstr ""
 
 #. module: report_aeroo
 #: code:addons/report_aeroo/models/report.py:0
@@ -593,17 +519,11 @@ msgid "Stylesheet"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/models/installer.py:0
+#: code:addons/report_aeroo/wizard/installer.py:0
 #, python-format
 msgid ""
 "Success! Connection to the DOCS service was successfully established and PDF"
 " convertion is working."
-msgstr ""
-
-#. module: report_aeroo
-#: code:addons/report_aeroo/models/report.py:0
-#, python-format
-msgid "Syntax Error !"
 msgstr ""
 
 #. module: report_aeroo
@@ -644,22 +564,6 @@ msgid "Template source"
 msgstr ""
 
 #. module: report_aeroo
-#: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_report_xml_view
-msgid "Test report without leaving this form."
-msgstr ""
-
-#. module: report_aeroo
-#: model:ir.actions.act_window,name:report_aeroo.action_aeroo_print_by_action_window
-#: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_print_by_action_view_form
-msgid "Test the Report"
-msgstr ""
-
-#. module: report_aeroo
-#: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_report_xml_view
-msgid "Test the Report!"
-msgstr ""
-
-#. module: report_aeroo
 #: model:ir.model.fields,help:report_aeroo.field_ir_actions_report__report_type
 msgid ""
 "The type of the report that will be rendered, each one having its own "
@@ -671,16 +575,6 @@ msgstr ""
 "renderización. HTML indica que el informe se abrirá directamente en el "
 "navegador, PDF indica que el informe se renderizará usando Wkhtmltopdf y "
 "luego será descargado por el usuario."
-
-#. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_print_actions.py:0
-#, python-format
-msgid ""
-"This process may take too long for interactive                     "
-"processing. It is advisable to defer the process as a                     "
-"background process. Do you want to start a deferred                     "
-"process?"
-msgstr ""
 
 #. module: report_aeroo
 #: code:addons/report_aeroo/check_deps.py:0
@@ -695,7 +589,6 @@ msgstr ""
 
 #. module: report_aeroo
 #: code:addons/report_aeroo/check_deps.py:0
-#: code:addons/report_aeroo/wizard/report_import_wizard.py:0
 #, python-format
 msgid "Warning!"
 msgstr ""
@@ -706,30 +599,9 @@ msgid "Wizard Action"
 msgstr ""
 
 #. module: report_aeroo
-#: code:addons/report_aeroo/wizard/report_print_actions.py:0
-#, python-format
-msgid "Wrong or not ids!"
-msgstr ""
-
-#. module: report_aeroo
-#: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_print_by_action_view_form
-msgid "_Print"
-msgstr ""
-
-#. module: report_aeroo
-#: model:ir.model,name:report_aeroo.model_aeroo_print_by_action
-msgid "aeroo.print_by_action"
-msgstr ""
-
-#. module: report_aeroo
 #: model:ir.model,name:report_aeroo.model_docs_config_installer
 msgid "docs_config.installer"
 msgstr ""
-
-#. module: report_aeroo
-#: model_terms:ir.ui.view,arch_db:report_aeroo.act_aeroo_print_by_action_view_form
-msgid "or"
-msgstr "o"
 
 #. module: report_aeroo
 #: model:ir.model,name:report_aeroo.model_report_product_template_printer
